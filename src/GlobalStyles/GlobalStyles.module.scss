@@ -1,0 +1,65 @@
+@import 'normalize.css';
+@import '~@fontsource/roboto';
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");;
+
+.App{
+    position: relative;
+    display: flex;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+// Scrollbar CSS
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background:  #888;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #e0e0e0;
+}
+
+::-webkit-scrollbar-track:hover{
+    background: #555;
+}
+
+// Fonts styles
+
+
+
