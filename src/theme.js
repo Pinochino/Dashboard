@@ -1,6 +1,5 @@
-import { Palette } from "@mui/icons-material";
 import { createTheme } from "@mui/material/styles";
-import { light } from "@mui/material/styles/createPalette";
+
 import { createContext, useState, useMemo } from "react";
 
 // color design tokens
