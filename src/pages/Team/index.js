@@ -1,5 +1,10 @@
+import TeamTable from "~/scenes/team";
+
 function Team() {
-    return ( <h2>Team Page</h2> );
+    return ( 
+    <div className="wrapper">
+        <TeamTable />
+    </div> );
 }
 
 export default Team;

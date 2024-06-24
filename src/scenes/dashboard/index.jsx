@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 function Dashboard() {
     return (
         <div className={cx('wrapper')}>
-            Dashboard
+          
         </div>
       );
 }
