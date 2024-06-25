@@ -4,8 +4,10 @@ import { mockDataTeam } from "~/data/mockData";
 import { tokens } from "~/theme";
 import Header from "~/components/Header";
 import { AdminPanelSettingsOutlined, LockOpenOutlined, SecurityOutlined } from "@mui/icons-material";
-import columns from "./column";
+import columns from "./TeamColumns";
 import { Typography } from "@mui/material";
+
+
 
 function TeamTable() {
     const theme = useTheme();
@@ -17,24 +19,27 @@ function TeamTable() {
                 ...col,
                 renderCell: ({ row: { access } }) => {
                     return (
-                        <Box
-                            width="60%"
-                            m="0 auto"
-                            p="5px"
-                            display="flex"
-                            justifyContent="center"
-                            backgroundColor={
-                                access === "admin" ? colors.greenAccent[600] : colors.greenAccent[200]
-                            }
-                            borderRadius="4px"
-                        >
-                            {access === "admin" && <AdminPanelSettingsOutlined />}
-                            {access === "manager" && <SecurityOutlined />}
-                            {access === "user" && <LockOpenOutlined />}
-                            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
-                                {access}
-                            </Typography>
-                        </Box>
+                            <Box
+                                display="flex"
+                                width="100%"
+                                m="10px auto"
+                                p="5px"
+                                justifyContent="center"
+                                alignItems="center !important"
+                                
+                                backgroundColor={
+                                    access === "admin" ? colors.greenAccent[600] : colors.greenAccent[200]
+                                }
+                                borderRadius="4px"
+                            >
+                                    {access === "admin" && <AdminPanelSettingsOutlined />}
+                                    {access === "manager" && <SecurityOutlined />}
+                                    {access === "user" && <LockOpenOutlined />}
+                                    <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+                                        {access}
+                                    </Typography>
+                            </Box>
+              
                     );
                 },
             };
@@ -46,20 +51,32 @@ function TeamTable() {
         <div>
             <Box m="20px">
                 <Header title="Team" subtitle="Managing the Team Members" />
-                <Box m="40px 0 0 0" height="45vh">
+                <Box m="40px 0 0 0" height="75vh" sx={{
+                    "& .MuiDataGrid-root": {
+                        border: "none"
+                    },
+                    "& .MuiDataGrid-cell": {
+                        borderBottom: 'none'
+                    },
+                    "& .name-column--cell": {
+                        color: colors.greenAccent[300]
+                    },
+                    "& .MuiDataGrid-columnHeader": {
+                        backgroundColor: colors.blueAccent[700],
+                        borderBottom: 'none'
+                    },
+                    "& .MuiDataGrid-virtualScroller": {
+                        backgroundColor: colors.primary[400],
+                    },
+                    "& .MuiDataGrid-footerContainer": {
+                        backgroundColor: colors.blueAccent[700],
+                        borderTop: 'none'
+                    },
+                }}>
                     <DataGrid
                         rows={mockDataTeam}
                         columns={modifiedColumns}
-                        initialState={{
-                            pagination: {
-                                paginationModel: {
-                                    pageSize: 5,
-                                },
-                            },
-                        }}
-                        pageSizeOptions={[5]}
-                        checkboxSelection
-                        disableRowSelectionOnClick
+                        
                     />
                 </Box>
             </Box>

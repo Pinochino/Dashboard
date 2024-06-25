@@ -8,23 +8,21 @@ import SideBar from "~/scenes/global/Sidebar/Sidebar";
 const cx = classNames.bind(styles);
 
 function DefaultLayout({ children }) {
-    return (
-        <div className={cx("wrapper")}>
-             <Box display="flex"  >
-              <Box
-              >
-                <SideBar />
-              </Box>
-              <Box flex="1">
-                <Topbar />
-              </Box>
-            </Box>
-            <div className={cx('content')}>
-                {children}
-            </div>
-        </div>
-       
-    );
+  return (
+    <Box className={cx("wrapper")}>
+      <Box display="flex"  >
+        <Box
+        >
+          <SideBar />
+        </Box>
+        <Box flex="1">
+          <Topbar />
+          {children}
+        </Box>
+      </Box>
+    </Box>
+
+  );
 }
 
 export default DefaultLayout;

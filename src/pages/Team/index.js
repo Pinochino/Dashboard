@@ -1,8 +1,8 @@
 import TeamTable from "~/scenes/team";
 
-function Team() {
+function Team({children}) {
     return ( 
-    <div className="wrapper">
+        <div className="wrapper">
         <TeamTable />
     </div> );
 }

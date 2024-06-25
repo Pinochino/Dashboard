@@ -1,3 +1,4 @@
+
 const columns = [
     { field: "id", headerName: "ID" },
   {
@@ -5,12 +6,12 @@ const columns = [
     headerName: "Name",
     flex: 1,
     cellClassName: "name-column--cell",
-    editable: true,
+    // editable: true,
   },
   {
     field: "email",
     headerName: "Email",
-    flex: "1",
+    flex: 1,
     editable: true,
   },
   {
@@ -24,13 +25,13 @@ const columns = [
   {
     field: "phone",
     headerName: "Phone",
-    flex: "1",
+    flex: 1,
     editable: true,
   },
   {
     field: "access",
     headerName: "Address",
-    flex: "1",
+    flex: 0.5,
     editable: true,
   },
 ];

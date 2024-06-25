@@ -1,5 +1,11 @@
+import ContactTable from "~/scenes/contact";
+
 function Contact() {
-    return ( <h2>Contact Page</h2> );
+    return ( 
+        <div className="wrapper">
+            <ContactTable />
+        </div>
+     );
 }
 
 export default Contact;
