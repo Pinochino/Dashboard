@@ -1,5 +1,11 @@
+import InvoicesPage from "~/scenes/invoices";
+
 function Invoices() {
-    return ( <h2>Invoices Page</h2> );
+    return ( 
+        <div className="wrapper">
+            <InvoicesPage />
+        </div>
+     );
 }
 
 export default Invoices;

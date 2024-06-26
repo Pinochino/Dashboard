@@ -1,5 +1,11 @@
+import FormPage from "~/scenes/form";
+
 function Form() {
-    return ( <h2>Form Page</h2> );
+    return ( 
+        <div className="wrapper">
+            <FormPage />
+        </div>
+     );
 }
 
 export default Form;

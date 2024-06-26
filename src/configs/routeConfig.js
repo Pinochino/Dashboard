@@ -6,5 +6,6 @@ const routes = {
     line: '/line',
     pie: '/pie',
     team: '/team',
+    form: '/form',
 }
 export default routes;

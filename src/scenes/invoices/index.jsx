@@ -1,17 +1,16 @@
 import { useTheme } from "@emotion/react";
 import { Box, LinearProgress } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { mockDataContacts } from "~/data/mockData";
+import { mockDataInvoices } from "~/data/mockData";
 import { tokens } from "~/theme";
 import Header from "~/components/Header";
-import ContactColumns from "./ContactColumns";
+import InvoicesColumn from "./InvoicesColumn";
 
-function ContactTable() {
+function InvoicesPage() {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
-  
-    return (
+    return ( 
         <div>
             <Box m="20px">
                 <Header title="Contact" subtitle="Managing the Contacts Information" />
@@ -20,7 +19,9 @@ function ContactTable() {
                         border: "none"
                     },
                     "& .MuiDataGrid-cell": {
-                        borderBottom: 'none'
+                        borderBottom: 'none',
+                        display: 'flex',
+                        alignItems: 'center'
                     },
                     "& .name-column--cell": {
                         color: colors.greenAccent[300]
@@ -38,20 +39,23 @@ function ContactTable() {
                     },
                     "& .MuiButtonBase-root": {
                         color: "#fff"
+                    },
+                    '& .MuiCheckbox-root': {
+                        color: `${colors.greenAccent[200] } !important`
                     }
                 }}>
                     <DataGrid
-                        rows={mockDataContacts}
-                        columns={ContactColumns}
+                        rows={mockDataInvoices}
+                        columns={InvoicesColumn}
                         slots={{
                             toolbar: GridToolbar,
                             loadingOverlay: LinearProgress,
                         }}
+                        checkboxSelection
                     />
                 </Box>
             </Box>
-        </div>
-    );
+    </div> );
 }
 
-export default ContactTable;
+export default InvoicesPage;

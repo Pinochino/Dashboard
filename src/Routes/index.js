@@ -1,8 +1,7 @@
-
-
 import routeConfig from "~/configs/routeConfig";
 import Contact from "~/pages/Contacts";
 import Faq from "~/pages/Faq";
+import Form from "~/pages/Form";
 import Invoices from "~/pages/Invoices";
 import Line from "~/pages/Line";
 import Pie from "~/pages/Pie";
@@ -38,6 +37,10 @@ const publicRoutes = [
     path: routeConfig.team,
     component: Team,
   },
+  {
+    path: routeConfig.form,
+    component: Form,
+  }
 ];
 
 const privateRoutes = []
