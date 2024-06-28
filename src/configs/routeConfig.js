@@ -7,5 +7,7 @@ const routes = {
     pie: '/pie',
     team: '/team',
     form: '/form',
+    calendar: '/calendar',
+    
 }
 export default routes;

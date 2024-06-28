@@ -1,16 +1,16 @@
 import { useTheme } from "@emotion/react";
 import { Box, Typography } from "@mui/material";
-import FormPage from "~/scenes/form";
+import CalendarPage from "~/scenes/calendar";
 import { tokens } from "~/theme";
 
-function Form() {
+function Calendar() {
     const theme = useTheme();
-    const colors = tokens(theme.palette.mode);
+    const color = tokens(theme.palette.mode);
     return ( 
         <div className="wrapper">
-            <FormPage />
+            <CalendarPage />
         </div>
      );
 }
 
-export default Form;
+export default Calendar;

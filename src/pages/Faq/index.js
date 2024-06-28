@@ -1,5 +1,11 @@
+import FaqPage from "~/scenes/faq";
+
 function Faq() {
-    return ( <h2>Faq Page</h2> );
+    return ( 
+        <div className="wrapper">
+            <FaqPage />
+        </div>
+     );
 }
 
 export default Faq;

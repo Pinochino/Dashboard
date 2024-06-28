@@ -1,4 +1,5 @@
 import routeConfig from "~/configs/routeConfig";
+import Calendar from "~/pages/Calendar";
 import Contact from "~/pages/Contacts";
 import Faq from "~/pages/Faq";
 import Form from "~/pages/Form";
@@ -40,6 +41,10 @@ const publicRoutes = [
   {
     path: routeConfig.form,
     component: Form,
+  },
+  {
+    path: routeConfig.calendar,
+    component: Calendar,
   }
 ];
 
