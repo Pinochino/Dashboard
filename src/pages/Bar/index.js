@@ -1,14 +1,14 @@
 import { Box } from "@mui/material";
+import BarChart from "~/components/BarChart";
 import Header from "~/components/Header";
-import PieChart from "~/components/PieChart";
 
-function PiePage() {
+function BarPage() {
     return (<Box>
-        <Header title='PIE CHART' subtitle='Create new pie'/>
+        <Header title='LINE PAGE' subtitle='Create new line' />
         <Box sx={{width: '100%', height: '75vh'}}>
-            <PieChart />
+            <BarChart />
         </Box>
     </Box>  );
 }
 
-export default PiePage;
+export default BarPage;

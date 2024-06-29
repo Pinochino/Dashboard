@@ -8,6 +8,8 @@ const routes = {
     team: '/team',
     form: '/form',
     calendar: '/calendar',
-    
+    bar: '/bar',
+    geography: '/geography',
+
 }
 export default routes;

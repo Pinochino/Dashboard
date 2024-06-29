@@ -35,7 +35,9 @@ function FormPage() {
 
     return (
         <Box m="20px">
-            <Header title="CREATE USER" subtitle="Create a New User Profile" />
+            <Box
+            sx={{p: '0 1rem 0 0', mb: '1rem'}}
+            ><Header title="CREATE USER" subtitle="Create a New User Profile" /></Box>
             <Formik
                 onSubmit={handleFormSubmit}
                 initialValues={initialValues}

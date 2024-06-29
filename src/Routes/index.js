@@ -1,11 +1,13 @@
 import routeConfig from "~/configs/routeConfig";
+import BarPage from "~/pages/Bar";
 import Calendar from "~/pages/Calendar";
 import Contact from "~/pages/Contacts";
 import Faq from "~/pages/Faq";
 import Form from "~/pages/Form";
+import GeographyPage from "~/pages/Geography";
 import Invoices from "~/pages/Invoices";
-import Line from "~/pages/Line";
-import Pie from "~/pages/Pie";
+import LinePage from "~/pages/Line";
+import PiePage from "~/pages/Pie";
 import Team from "~/pages/Team";
 import Dashboard from "~/scenes/dashboard";
 
@@ -28,11 +30,11 @@ const publicRoutes = [
   },
   {
     path: routeConfig.line,
-    component: Line,
+    component: LinePage,
   },
   {
     path: routeConfig.pie,
-    component: Pie,
+    component: PiePage,
   },
   {
     path: routeConfig.team,
@@ -45,7 +47,15 @@ const publicRoutes = [
   {
     path: routeConfig.calendar,
     component: Calendar,
-  }
+  },
+  {
+    path: routeConfig.bar,
+    component: BarPage
+  },
+  {
+    path: routeConfig.geography,
+    component: GeographyPage
+  },
 ];
 
 const privateRoutes = []

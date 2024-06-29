@@ -9,8 +9,8 @@ function Header({title, subtitle}) {
 
     return (  
         <div className="wrapper">
-            <Box mb="20px">
-                <Typography variant="h3" fontWeight="bold" color={colors.grey[100]} sx={{m: '0 0 5px 0'}}>
+            <Box m="0 1.5rem 1rem">
+                <Typography variant="h3" fontWeight="bold" color={colors.grey[100]} >
                     {title}
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[700]}>{subtitle}</Typography>
