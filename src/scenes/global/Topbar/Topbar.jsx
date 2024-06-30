@@ -1,4 +1,3 @@
-import styles from './Topbar.module.scss'
 import { useTheme } from "@emotion/react";
 import { Box, IconButton, InputBase } from "@mui/material";
 import { useContext } from "react";
@@ -10,9 +9,7 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import classNames from "classnames/bind";
 
-const cx = classNames.bind(styles);
 
 function Topbar() {
   const theme = useTheme();
@@ -20,7 +17,7 @@ function Topbar() {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <div className={cx('wrapper')}>
+    <div>
       <Box 
       display="flex" justifyContent="space-between" p={2}
          >
