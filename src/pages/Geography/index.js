@@ -10,7 +10,7 @@ function GeographyPage() {
       border={`1px solid ${colors.grey[100]}`}
       borderRadius='4px'
       >
-        <GeographyChart />
+        <GeographyChart height='75vh'/>
       </Box>
     </Box>
   );

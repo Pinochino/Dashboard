@@ -23,6 +23,7 @@ function StatBox({ title, subtitle, icon, progress, increase }) {
         <Box>
           <ProgressCircle progress={progress} />
         </Box>
+        </Box>
         <Box display="flex" justifyContent="space-between">
           <Typography
             variant="h5"
@@ -38,7 +39,6 @@ function StatBox({ title, subtitle, icon, progress, increase }) {
             {increase}
           </Typography>
         </Box>
-      </Box>
     </Box>
   );
 }

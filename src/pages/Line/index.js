@@ -7,8 +7,8 @@ function LinePage() {
     return (
         <Box>
             <Header title='LINE CHART' subtitle='Create line chart'/>
-            <Box sx={{width: '100%', height: '75vh'}}>
-                <LineChart />
+            <Box>
+                <LineChart height='75vh' />
             </Box>
         </Box>
       );

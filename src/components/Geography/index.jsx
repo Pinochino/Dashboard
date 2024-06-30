@@ -5,12 +5,12 @@ import { mockGeographyData } from "~/data/mockData";
 import { geoFeatures } from "~/data/mockGeoFeature";
 import { tokens } from "~/theme";
 
-function GeographyChart({isDashboad = false}) {
+function GeographyChart({isDashboad = false, height}) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box sx={{ width: "100%", height: "75vh" }}>
+    <Box sx={{ width: "100%", height: `${height}` }}>
       <ResponsiveChoropleth
         theme= {{
           axis: {

@@ -4,12 +4,12 @@ import { ResponsiveLine } from '@nivo/line'
 import { mockLineData } from "~/data/mockData";
 import { tokens } from "~/theme";
 
-function LineChart( {isLDashboard = false}) {
+function LineChart( {isLDashboard = false, height}) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
     return ( 
-        <Box sx={{width: '100%', height: '30rem'}}>
+        <Box sx={{width: '100%', height: `${height}`}}>
         <ResponsiveLine
         data={mockLineData}
         theme={{

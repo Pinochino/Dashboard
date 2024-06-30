@@ -4,12 +4,12 @@ import { ResponsivePie } from "@nivo/pie";
 import { mockPieData } from "~/data/mockData";
 import { tokens } from "~/theme";
 
-function PieChart() {
+function PieChart(isLDashboard = false, height) {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
   return (
-    <Box sx={{width: '100%', height: '30rem'}}>
+    <Box sx={{width: '100%', height: '75vh'}}>
       <ResponsivePie
         data={mockPieData}
         theme={{
