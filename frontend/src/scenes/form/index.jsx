@@ -7,12 +7,13 @@ const initialValues = {
     firstName: "",
     lastName: "",
     email: "",
+    password: "",
     contact: "",
-    address1: "",
-    address2: "",
+    address: "",
 };
 
 const phoneRegExp = "^\\d{10}$";
+const passwordRegExp = '^(?=.*[0-9])(?=.*[az])(?=.*[AZ])(?=.*[@#$%^&-+=() ])(?=\\\\S+$).{8, 20}$'
 
 const validationSchema = yup.object().shape({
     firstName: yup.string().required("required"),
@@ -22,8 +23,10 @@ const validationSchema = yup.object().shape({
         .string()
         .matches(phoneRegExp, "Phone number is not valid")
         .required("required"),
-    address1: yup.string().required("required"),
-    address2: yup.string().required("required"),
+    password: yup.string()
+        .matches(passwordRegExp, 'Password is not valid')
+        .required("required"),
+    address: yup.string().required("required"),
 });
 
 function FormPage() {
@@ -116,26 +119,26 @@ function FormPage() {
                                 fullWidth
                                 variant="filled"
                                 type="text"
-                                label="Address 1"
+                                label="Password"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.address1}
-                                name="address1"
-                                error={!!touched.address1 && !!errors.address1}
-                                helperText={touched.address1 && errors.address1}
+                                value={values.password}
+                                name="password"
+                                error={!!touched.password && !!errors.password}
+                                helperText={touched.password && errors.password}
                                 sx={{ gridColumn: 'span 4' }}
                             />
                             <TextField
                                 fullWidth
                                 variant="filled"
                                 type="text"
-                                label="Address 2"
+                                label="Address"
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                value={values.address2}
-                                name="address2"
-                                error={!!touched.address2 && !!errors.address2}
-                                helperText={touched.address2 && errors.address2}
+                                value={values.address}
+                                name="address"
+                                error={!!touched.address && !!errors.address}
+                                helperText={touched.address && errors.address}
                                 sx={{ gridColumn: 'span 4' }}
                             />
                         </Box>
