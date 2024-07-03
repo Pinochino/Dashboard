@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin("http://localhost:3000")
 @RequestMapping("/api")
-public class myController {
+public class MyController {
 
     @GetMapping("/greeting")
     public String toGreet() {
