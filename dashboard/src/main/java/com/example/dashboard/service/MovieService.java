@@ -1,17 +1,20 @@
 package com.example.dashboard.service;
 
-import com.example.dashboard.entity.Movie;
+import com.example.dashboard.dto.MovieDto;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
+
 
 @Service
 public interface MovieService {
 
-List<Movie> getAllCustomers();
-Movie getCustomerById(int id);
-Movie save(Movie movie);
-Movie saveAndFlush(Movie movie);
+    MovieDto addMovie(MovieDto movieDto, MultipartFile file) throws IOException;
 
-void delete(Integer id);
+    MovieDto getMovie(Integer movieID);
+
+    List<MovieDto> getAllMovies();
+
 }

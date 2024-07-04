@@ -37,7 +37,7 @@ public class Movie {
     @NotBlank(message = "Please provide movie's poster!")
     private String poster;
 
-    public Movie() {
+    public Movie(Long movieId, @NotBlank(message = "Please provide movie's title!") String title, @NotBlank(message = "Please provide movie's title!") String director, @NotBlank(message = "Please provide movie's studio!") String studio, @NotBlank(message = "Please provide movie's movieCast!") Set<String> movieCast, @NotBlank(message = "Please provide movie's releaseYear!") Integer releaseYear, @NotBlank(message = "Please provide movie's poster!") String poster) {
     }
 
     public Movie(@NotBlank(message = "Please provide movie's title!") String title,

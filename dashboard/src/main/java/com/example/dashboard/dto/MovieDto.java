@@ -10,10 +10,9 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-class MovieDTO {
+public class MovieDto {
 
-    private Long Id;
+    private Long movieId;
 
     @NotBlank(message = "Please provide movie's title!")
     private String title;
@@ -37,4 +36,14 @@ class MovieDTO {
     @NotBlank(message = "Please provide movie's url!")
     private String posterUrl;
 
+    public MovieDto(Long movieId, String title, String director, String studio, Set<String> movieCast, Integer releaseYear, String poster, String posterUrl) {
+        this.movieId = movieId;
+        this.title = title;
+        this.director = director;
+        this.studio = studio;
+        this.movieCast = movieCast;
+        this.releaseYear = releaseYear;
+        this.poster = poster;
+        this.posterUrl = posterUrl;
+    }
 }
