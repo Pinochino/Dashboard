@@ -16,8 +16,8 @@ import com.example.dashboard.service.FileService;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
-@RequestMapping("/api")
-public class MyController {
+@RequestMapping("/file")
+public class FileController {
 
     @Value("${project.poster}")
     private String path;
@@ -25,17 +25,17 @@ public class MyController {
     private final FileService fileService;
 
     @Autowired
-    public MyController(FileService fileService) {
+    public FileController(FileService fileService) {
         this.fileService = fileService;
     }
 
-    @PostMapping("/upload")
+    @PostMapping("upload")
     public ResponseEntity<String> uploadFileHandler(@RequestPart MultipartFile file) throws IOException {
         String uploadedFileName = fileService.uploadFile(path, file);
         return ResponseEntity.ok("File is successfully upload: " + uploadedFileName);
     }
 
-    @GetMapping("/{fileName}")
+    @GetMapping("{fileName}")
     public void serveFileHandler(@PathVariable String fileName, HttpServletResponse response) throws Exception {
         InputStream resourceFile  = fileService.getResourceFile(path, fileName);
         response.setContentType(MediaType.IMAGE_PNG_VALUE);
