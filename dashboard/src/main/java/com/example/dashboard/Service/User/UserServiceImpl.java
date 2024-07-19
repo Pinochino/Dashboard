@@ -3,7 +3,9 @@ package com.example.dashboard.Service.User;
 import com.example.dashboard.Exception.AppException;
 import com.example.dashboard.Exception.ErrorCode;
 import com.example.dashboard.dto.request.UserCreationRequest;
+import com.example.dashboard.dto.request.UserUpdateRequest;
 import com.example.dashboard.entity.Customer;
+import com.example.dashboard.mapper.UserMapper;
 import com.example.dashboard.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +16,12 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
+        this.userMapper = userMapper;
     }
 
     @Override
@@ -32,24 +36,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Customer createUser(UserCreationRequest request) {
-        Customer user = new Customer();
-
         if (userRepository.existsByUsername(request.getUsername()))
             throw new AppException(ErrorCode.USER_EXISTED);
 
-        user.setUsername(request.getUsername());
-        user.setPassword(request.getPassword());
-        user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
-        user.setDob(request.getDob());
+        Customer user = userMapper.toCustomer(request);
 
         return userRepository.save(user);
     }
 
     @Override
-    public Customer updateUser(Customer user) {
-        return userRepository.save(user);
+    public Customer updateUser(UserUpdateRequest request, UUID id) {
+        Customer customer = getUserById(id);
+        userMapper.updateCustomer(customer, request);
+        return userRepository.save(customer);
     }
+
 
     @Override
     public void deleteUserById(UUID Id) {

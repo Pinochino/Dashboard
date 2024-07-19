@@ -3,6 +3,7 @@ package com.example.dashboard.controller;
 import com.example.dashboard.Service.User.UserService;
 import com.example.dashboard.dto.request.ApiResponse;
 import com.example.dashboard.dto.request.UserCreationRequest;
+import com.example.dashboard.dto.request.UserUpdateRequest;
 import com.example.dashboard.entity.Customer;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,21 +44,10 @@ public class UserController {
     }
 
     @PutMapping("/user/{id}")
-    public ResponseEntity<Customer> updateStudentById(@PathVariable UUID id, @RequestBody Customer user){
-        Customer user1 =  userService.getUserById(id);
-        if (user1 != null){
-
-            user1.setFirstName(user.getFirstName());
-            user1.setPassword(user.getPassword());
-            user1.setLastName(user.getLastName());
-            user1.setDob(user.getDob());
-            user1.setUsername(user.getUsername());
-
-            return ResponseEntity.ok(user1);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public  Customer updateStudentById(@PathVariable UUID id, @RequestBody UserUpdateRequest request) {
+        return userService.updateUser(request, id);
     }
+
 
     @DeleteMapping("user/{id}")
     public void deleteUser(@PathVariable UUID id){
