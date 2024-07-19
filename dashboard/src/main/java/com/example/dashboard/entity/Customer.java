@@ -18,7 +18,7 @@ public class Customer {
     @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
-    @Column(name = "username", nullable = false, length = 30, unique = true)
+    @Column(name = "username", nullable = false, unique = true)
     @NotBlank(message = "Please enter the user's username")
     private String username;
 
