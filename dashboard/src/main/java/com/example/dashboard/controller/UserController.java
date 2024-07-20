@@ -4,6 +4,7 @@ import com.example.dashboard.Service.User.UserService;
 import com.example.dashboard.dto.request.ApiResponse;
 import com.example.dashboard.dto.request.UserCreationRequest;
 import com.example.dashboard.dto.request.UserUpdateRequest;
+import com.example.dashboard.dto.response.UserResponse;
 import com.example.dashboard.entity.Customer;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class UserController {
     }
 
     @GetMapping("/user/{id}")
-    public ResponseEntity<Customer> getUserById(@PathVariable UUID id) {
-        Customer user = userService.getUserById(id);
+    public ResponseEntity<UserResponse> getUserById(@PathVariable UUID id) {
+        UserResponse user = userService.getUserById(id);
         return ResponseEntity.ok(user); // Return 200 OK with user object
     }
 
@@ -44,8 +45,8 @@ public class UserController {
     }
 
     @PutMapping("/user/{id}")
-    public  Customer updateStudentById(@PathVariable UUID id, @RequestBody UserUpdateRequest request) {
-        return userService.updateUser(request, id);
+    public UserResponse updateStudentById(@PathVariable UUID id, @RequestBody UserUpdateRequest request) {
+        return userService.updateUser(id, request);
     }
 
 

@@ -21,6 +21,7 @@
 //    @Value("${project.poster}")
 //    private String path;
 //
+//    @Autowired
 //    private final FileService fileService;
 //
 //    @Autowired

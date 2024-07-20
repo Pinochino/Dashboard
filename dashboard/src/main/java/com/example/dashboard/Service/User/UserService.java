@@ -2,6 +2,7 @@ package com.example.dashboard.Service.User;
 
 import com.example.dashboard.dto.request.UserCreationRequest;
 import com.example.dashboard.dto.request.UserUpdateRequest;
+import com.example.dashboard.dto.response.UserResponse;
 import com.example.dashboard.entity.Customer;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +13,10 @@ import java.util.UUID;
 public interface UserService  {
 
    List<Customer> getAllUser();
-   Customer getUserById(UUID Id);
+   UserResponse getUserById(UUID Id);
    Customer createUser(UserCreationRequest request);
-   Customer updateUser(UserUpdateRequest request, UUID id);
 
-   void deleteUserById(UUID Id);
+    UserResponse updateUser(UUID id, UserUpdateRequest request);
+
+    void deleteUserById(UUID Id);
 }

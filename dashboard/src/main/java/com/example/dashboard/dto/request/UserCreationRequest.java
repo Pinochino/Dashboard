@@ -1,11 +1,16 @@
 package com.example.dashboard.dto.request;
 
+
 import jakarta.validation.constraints.Size;
+import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
-public class UserUpdateRequest {
+@Data
+public class UserCreationRequest {
+
+    @Size(message = "USER_INVALID", min = 10)
+    private String username;
 
     @Size(message = "PASSWORD_INVALID", min = 8)
     private String password;
@@ -13,4 +18,5 @@ public class UserUpdateRequest {
     private String firstName;
     private String lastName;
     private LocalDate dob;
+
 }

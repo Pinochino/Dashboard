@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class MyException {
 
     @ExceptionHandler(value = Exception.class)
-    public ResponseEntity<ApiResponse> handleAllException(AppException exception){
+    public ResponseEntity<ApiResponse> handleAllException(Exception exception){
         ApiResponse response = new ApiResponse<>();
 
         response.setCode(ErrorCode.UNCATEGORIZED_EXCEPTION.getCode());
