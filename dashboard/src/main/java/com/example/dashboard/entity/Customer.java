@@ -24,7 +24,7 @@ public class Customer {
     @NotBlank(message = "Please enter the user's username")
      String username;
 
-    @Column(name = "password", nullable = false, length = 30)
+    @Column(name = "password", nullable = false, length = 100)
     @NotBlank(message = "Please enter the user's password")
      String password;
 
