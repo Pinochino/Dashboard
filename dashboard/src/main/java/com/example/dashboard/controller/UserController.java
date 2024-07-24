@@ -1,7 +1,7 @@
 package com.example.dashboard.controller;
 
 import com.example.dashboard.Service.User.UserService;
-import com.example.dashboard.dto.request.ApiResponse;
+import com.example.dashboard.dto.response.ApiResponse;
 import com.example.dashboard.dto.request.UserCreationRequest;
 import com.example.dashboard.dto.request.UserUpdateRequest;
 import com.example.dashboard.dto.response.UserResponse;

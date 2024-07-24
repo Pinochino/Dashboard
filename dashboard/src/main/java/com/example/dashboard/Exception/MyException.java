@@ -1,10 +1,12 @@
 package com.example.dashboard.Exception;
 
-import com.example.dashboard.dto.request.ApiResponse;
+import com.example.dashboard.dto.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import java.util.Objects;
 
 @ControllerAdvice
 public class MyException {
@@ -42,8 +44,8 @@ public class MyException {
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     ResponseEntity<ApiResponse> handlingValidation(MethodArgumentNotValidException exception){
-        String enumKey = exception.getFieldError().getDefaultMessage();
-        ErrorCode errorCode = ErrorCode.INVALID_KEY;
+        String enumKey = Objects.requireNonNull(exception.getFieldError()).getDefaultMessage();
+        ErrorCode errorCode;
 
         try {
             errorCode = ErrorCode.valueOf(enumKey);
