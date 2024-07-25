@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping("/user/{id}")
     public ResponseEntity<UserResponse> getUserById(@PathVariable UUID id) {
         UserResponse user = userService.getUserById(id);
-        return ResponseEntity.ok(user); // Return 200 OK with user object
+        return ResponseEntity.ok(user);
     }
 
     @PostMapping("/user")
